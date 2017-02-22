@@ -101,7 +101,7 @@ def pageSetupScenarioA() {
     dynamicPage(name: "pageSetupScenarioA") {
 		section("Alarm settings") {
         	input "ScenarioNameA", "text", title: "Scenario Name", multiple: false, required: true
-			input "A_sonos", "capability.musicPlayer", title: "Choose a Sonos speaker", required: true, submitOnChange:true
+			input "A_sonos", "capability.musicPlayer", title: "Choose a Sonos speaker", required: true, submitOnChange:true, multiple: true
             input "A_volume", "number", title: "Alarm volume", description: "0-100%", required: false
         	input "A_timeStart", "time", title: "Time to trigger alarm", required: true
         	input "A_day", "enum", options: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], title: "Alarm on certain days of the week...", multiple: true, required: false
@@ -1337,4 +1337,3 @@ private def textHelp() {
         "speak a summary of the alarms enabled or disabled without having to go into the application itself. This " +
         "functionality is optional and can be configured from the main setup page."
 }
-
